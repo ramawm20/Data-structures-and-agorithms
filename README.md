@@ -2,3 +2,4 @@
 ## Code Challenges in C#
 ## -Table of contents :
 + [Reverse-Array](./C%23-Array-Reverse/README.md)
++ [Array-Insert-Shift](./C%23-Array-Insert-Shift/README.md)
