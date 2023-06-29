@@ -14,4 +14,12 @@
 
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+## The code 
+![Code](./Code.png)
+## 
+[Link to the code](./Program.cs)
+
+## Testing
+![Testing](./Testing.png)
+## 
+[Link to UnitTesting](./testLinkedList/UnitTest1.cs)
