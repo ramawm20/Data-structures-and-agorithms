@@ -6,5 +6,5 @@
 + [Array-Binary-Search](./C%23-Array-Binary-Search/README.md)
 + [LinkedList](./LinkedList/README.md)
 + [LinkedListInsertion](./Linkedlist2/README.md)
-+ [LinkedListKthFromEnd](./Linkedlist3-kth/README.md)
++ [LinkedListKthFromEnd](./Linkedlist3-Kth/README.md)
 
