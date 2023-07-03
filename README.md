@@ -5,5 +5,6 @@
 + [Array-Insert-Shift](./C%23-Array-Insert-Shift/README.md)
 + [Array-Binary-Search](./C%23-Array-Binary-Search/README.md)
 + [LinkedList](./LinkedList/README.md)
-+ [LinkedList2](./Linkedlist2/README.md)
++ [LinkedListInsertion](./Linkedlist2/README.md)
++ [LinkedListKthFromEnd](./Linkedlist3-kth/README.md)
 
