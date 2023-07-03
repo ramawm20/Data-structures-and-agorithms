@@ -1,6 +1,6 @@
 ﻿namespace LinkedList
 {
-    public  class Program
+    public class Program
     {
         public class Node
         {
@@ -80,7 +80,7 @@
                 Node newNode = new Node(newValue);
                 Node current = head;
                 Node insertB;
-                bool found= false;
+                bool found = false;
                 while (current.nextNode != null)
                 {
                     if (head.value == value)
@@ -102,7 +102,7 @@
 
                     current = current.nextNode;
                 }
-                if(!found)
+                if (!found)
                 {
                     throw new Exception($"The value {value} you want to add before not found in the linked list");
                 }
@@ -145,9 +145,9 @@
                 Node current = head;
                 Node N;
                 bool found = false;
-          
-                    while (current != null && current.nextNode != null)
-                    {
+
+                while (current != null && current.nextNode != null)
+                {
                     if (head.value == value)
                     {
                         head = current.nextNode;
@@ -163,40 +163,80 @@
                         break;
                     }
 
-                        current = current.nextNode;
-                    }
-                    if (!found) 
+                    current = current.nextNode;
+                }
+                if (!found)
                 {
                     throw new Exception("Specific value not found in the linked list.");
                 }
 
-                
-                
+
+
 
 
             }
-     
-    }
+            public int kthFromEnd(int k)
+            {
+                Node current = head;
+                int length = 0;
+                while (current != null)
+                {
+                    length += 1;
+                    current = current.nextNode;
+                }
+                if (k > length || k == length)
 
-        static void Main(string[] args)
-        {
-            LinkedList newList=new LinkedList();
-            newList.Insert(2);
-            newList.Insert(2);
-            newList.Insert(1);
+                {
+                    throw new Exception($"Error the value {k} is equal or greater than the" +
+                        $" size of the linked list");
+                }
+                else if (k < 0)
+                {
+                    throw new Exception($"Error index can't be negative");
+                }
+                current = head;
+                int count = 1;
+                int index = length - k;
+
+                while(count<index)
+                {
+                    current=current.nextNode;
+                    count++;
+                }
+                //  throw new ArgumentException("Invalid value of k.");
+                return current.value;
+            }
+
+            static void Main(string[] args)
+            {
+                LinkedList newList = new LinkedList();
+                newList.Insert(5);
+                newList.Insert(4);
+                newList.Insert(3);
+                newList.Insert(2);
+                newList.Insert(1);
 
 
-            string res;
-            res=newList.toString();
-            Console.WriteLine(res);
 
-            
-
-            res = newList.toString();
-            Console.WriteLine(res);
+                string res;
+                res = newList.toString();
+                Console.WriteLine(res);
 
 
 
+                Console.WriteLine("0  "+newList.kthFromEnd(0));
+                Console.WriteLine("1  "+newList.kthFromEnd(1));
+                Console.WriteLine("2  "+newList.kthFromEnd(2));
+                Console.WriteLine("3  "+newList.kthFromEnd(3));
+                Console.WriteLine("4  "+ newList.kthFromEnd(4));
+                Console.WriteLine("5  " + newList.kthFromEnd(9));
+
+
+
+
+
+
+            }
         }
     }
 }

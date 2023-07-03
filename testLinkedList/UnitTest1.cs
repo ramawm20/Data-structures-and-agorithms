@@ -1,5 +1,7 @@
 using LinkedList;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using Xunit.Sdk;
 
 namespace testLinkedList
 {
@@ -217,6 +219,61 @@ namespace testLinkedList
 
             string expected = $"{{{v1}}} -> {{{v2}}} -> {{{v3}}} -> NULL";
             Assert.Equal(expected, newList.toString());
+
+        }
+        [Fact]
+        public void TestHappyPathforKthMethod()
+        {
+            Program.LinkedList newList = new Program.LinkedList();
+            newList.Insert(5);
+            newList.Insert(4);
+            newList.Insert(3);
+            newList.Insert(2);
+            newList.Insert(1);
+
+            Assert.Equal(2, newList.kthFromEnd(3));
+            Assert.Equal(5, newList.kthFromEnd(0));
+            Assert.Equal(1, newList.kthFromEnd(4));
+        }
+        [Fact]
+        public void TestKIsEqualOrGreaterforKthMetgod()
+        {
+            Program.LinkedList newList = new Program.LinkedList();
+            newList.Insert(5);
+            newList.Insert(4);
+            newList.Insert(3);
+            newList.Insert(2);
+            newList.Insert(1);
+
+            Assert.Throws<Exception>(() => newList.kthFromEnd(5));
+            Assert.Throws<Exception>(() => newList.kthFromEnd(8));
+
+        }
+        [Fact]
+        public void TestKIsNegativeforKthMetgod()
+        {
+            Program.LinkedList newList = new Program.LinkedList();
+            newList.Insert(5);
+            newList.Insert(4);
+            newList.Insert(3);
+            newList.Insert(2);
+            newList.Insert(1);
+
+            Assert.Throws<Exception>(() => newList.kthFromEnd(-2));
+           
+
+        }
+        [Fact]
+        public void TestLinkListOfSizeOneforKthMetgod()
+        {
+            Program.LinkedList newList = new Program.LinkedList();
+            newList.Insert(5);
+           
+
+            Assert.Throws<Exception>(() => newList.kthFromEnd(2));
+            Assert.Throws<Exception>(() => newList.kthFromEnd(-1));
+            Assert.Throws<Exception>(() => newList.kthFromEnd(-2));
+            Assert.Equal(5, newList.kthFromEnd(0));
 
         }
 
