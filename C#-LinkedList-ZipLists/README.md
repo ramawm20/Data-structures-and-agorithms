@@ -4,7 +4,7 @@
 
 #
 ## Whiteboard Process
-![WhiteBoard](./WhiteBoard1.jpg)
+![WhiteBoard](./zipList-whiteBoard.jpg)
 
 
 ## Approach & Efficiency
@@ -25,7 +25,9 @@
 [Link to the code](./LinkedList/Program.cs)
 
 ## Testing
-![Testing](./Testing.png)
+![Testing](./Testing1.png)
+![Testing](./Testing2.png)
+
 #
 [Link to the testing](../testLinkedList/UnitTest1.cs)
 
