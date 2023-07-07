@@ -16,6 +16,7 @@
         public class LinkedList
         {
             public Node head;
+            public int size=0;
 
             public LinkedList()
             {
@@ -27,6 +28,7 @@
                 Node newNode = new Node(value);
                 newNode.nextNode = head;
                 head = newNode;
+                size++;
             }
 
             public bool Includes(int value)
@@ -71,6 +73,7 @@
                 }
                 current.nextNode = newNode;
                 newNode.nextNode = null;
+                size++;
 
             }
             public void insertBefore(int value, int newValue)
@@ -107,7 +110,7 @@
                     throw new Exception($"The value {value} you want to add before not found in the linked list");
                 }
 
-
+                size++;
 
 
             }
@@ -136,7 +139,7 @@
                 {
                     throw new Exception($"The Value {value} to add after it not found in the linked list");
                 }
-
+                size++;
 
             }
             public void deleteNode(int value)
@@ -170,7 +173,7 @@
                     throw new Exception("Specific value not found in the linked list.");
                 }
 
-
+                size--;
 
 
 
@@ -206,31 +209,75 @@
                 //  throw new ArgumentException("Invalid value of k.");
                 return current.value;
             }
+            public LinkedList zipLists(LinkedList L1,LinkedList L2)
+            {
+              
+                LinkedList newList = new LinkedList();
+                if (L1.head == null && L2.head == null)
+                {
+                    return newList;
+                }
+
+                Node currentF, currentS;
+                if (L1.size>L2.size)
+                {
+                     currentF = L1.head;
+                     currentS = L2.head;
+                }
+                else
+                {
+                     currentF = L2.head;
+                     currentS = L1.head;
+                }
+                newList.Insert(currentF.value);
+                currentF = currentF.nextNode;
+                while (currentF !=null )
+                {
+                    if (currentS == null)
+                    {
+                        while(currentF != null)
+                        {
+                            newList.append(currentF.value);
+                            currentF = currentF.nextNode; 
+                            
+                        }
+                        break;
+                    }
+                    newList.append(currentS.value);
+                    newList.append(currentF.value);
+
+                    currentF = currentF.nextNode;
+                    currentS = currentS.nextNode;
+
+                }
+                return newList;
+            }
 
             static void Main(string[] args)
             {
                 LinkedList newList = new LinkedList();
-                newList.Insert(5);
-                newList.Insert(4);
-                newList.Insert(3);
-                newList.Insert(2);
                 newList.Insert(1);
+                newList.append(2);
+                newList.append(3);
+                newList.append(4);
+                newList.append(5);
 
+               
+
+                LinkedList newl= new LinkedList();
+                LinkedList l1= new LinkedList();
+                LinkedList l2= new LinkedList();
+
+
+                newl = newl.zipLists(l1, l2);
+                string resultOfZip;
+                resultOfZip=newl.toString();
+                Console.WriteLine(resultOfZip);
 
 
                 string res;
                 res = newList.toString();
                 Console.WriteLine(res);
-
-
-
-                Console.WriteLine("0  "+newList.kthFromEnd(0));
-                Console.WriteLine("1  "+newList.kthFromEnd(1));
-                Console.WriteLine("2  "+newList.kthFromEnd(2));
-                Console.WriteLine("3  "+newList.kthFromEnd(3));
-                Console.WriteLine("4  "+ newList.kthFromEnd(4));
-                Console.WriteLine("5  " + newList.kthFromEnd(9));
-
 
 
 
