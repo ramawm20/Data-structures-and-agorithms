@@ -22,7 +22,7 @@
 ## The code 
 ![Code](./Code.png)
 ## 
-[Link to the code](./LinkedList/Program.cs)
+[Link to the code](../LinkedList/Program.cs)
 
 ## Testing
 ![Testing](./Testing1.png)
