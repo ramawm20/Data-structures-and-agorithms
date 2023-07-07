@@ -276,6 +276,84 @@ namespace testLinkedList
             Assert.Equal(5, newList.kthFromEnd(0));
 
         }
+        [Fact]
+        public void TestZipListsHappyPath()
+        {
+            //Arrange
+            Program.LinkedList List1 = new Program.LinkedList();
+            Program.LinkedList List2 = new Program.LinkedList();
+
+            List1.Insert(1);
+            List1.append(3);
+            List1.append(5);
+            List2.Insert(2);
+            List2.append(4);
+
+            Program.LinkedList r1 = new Program.LinkedList();
+            r1.Insert(1);
+            r1.append(2);
+            r1.append(3);
+            r1.append(4);
+            r1.append(5);
+
+            //Act
+            Program.LinkedList r2=new Program.LinkedList();
+            r2=r2.zipLists(List1,List2);
+
+            string expected=r1.toString();
+            string actual=r2.toString();
+
+            //Assert
+            Assert.Equal(expected, actual); 
+           
+        }
+        [Fact]
+        public void TestZipListsTestOneNull() 
+        {
+            //Arrange
+            Program.LinkedList List1 = new Program.LinkedList();
+            Program.LinkedList List2 = new Program.LinkedList();
+
+            List1.Insert(1);
+            List1.append(3);
+            List1.append(5);
+           
+
+            Program.LinkedList result = new Program.LinkedList();
+            result.Insert(1);
+            result.append(3);
+            result.append(5);
+
+            //Act
+            string expected = List1.toString();
+
+            Program.LinkedList r2 = new Program.LinkedList();
+            r2 = r2.zipLists(List1, List2);
+
+            string actual = r2.toString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void TestZipListsTestBothNull()
+        {
+            //Arrange
+            Program.LinkedList List1 = new Program.LinkedList();
+            Program.LinkedList List2 = new Program.LinkedList();
+
+            //Act
+            string expected = "NULL";
+
+            Program.LinkedList r2 = new Program.LinkedList();
+            r2 = r2.zipLists(List1, List2);
+
+            string actual = r2.toString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
 
 
     }
