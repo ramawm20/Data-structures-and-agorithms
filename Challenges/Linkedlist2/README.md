@@ -3,7 +3,7 @@
 + I created a simple singly Linked list and it's contain some features adding node to the end, insert before or after specific node and delete specific node
 
 ## Whiteboard Process
-![WhiteBoard](./LinkedList2.jpg)
+![WhiteBoard](./Assest/LinkedList2.jpg)
 
 ## Approach & Efficiency
 + 1.First create the append method that takes a value create new Node within it and give it the value and create a current node that points to the head  make a while loop stops when the current.next equals NULL and move the current to current.next after the while make the current.next points to the new node and the new node points to NULL.
@@ -13,21 +13,21 @@
 
 ## Solution
 ## The code 
-![Code1](./Code1LL2.png)
+![Code1](./Assest/Code1LL2.png)
 # 
-![Code2](./code2LL2.png)
+![Code2](./Assest/code2LL2.png)
 
 ## 
 [Link to the code](/LinkedList/Program.cs)
 
 ## Testing
-![Testing](./Testing1.png)
+![Testing](./Assest/Testing1.png)
 #
-![Testing](./Testing2.png)
+![Testing](./Assest/Testing2.png)
 #
-![Testing](./testing3.png)
+![Testing](./Assest/testing3.png)
 #
-![Testing](./testing4.png)
+![Testing](./Assest/testing4.png)
 #
-[Link to the testing](../testLinkedList/UnitTest1.cs)
+[Link to the testing](/testLinkedList/UnitTest1.cs)
 
