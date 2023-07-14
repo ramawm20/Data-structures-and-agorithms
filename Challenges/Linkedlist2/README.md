@@ -18,7 +18,7 @@
 ![Code2](./code2LL2.png)
 
 ## 
-[Link to the code](../LinkedList/Program.cs)
+[Link to the code](..//LinkedList/Program.cs)
 
 ## Testing
 ![Testing](./Testing1.png)
