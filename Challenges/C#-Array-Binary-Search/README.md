@@ -3,7 +3,7 @@
 
 #
 ## -Whiteboard Process
-![Binary-Search](./BinarySearch.jpg)
+![Binary-Search](./Assest/BinarySearch.jpg)
 
 #
 ## -Approach & Efficiency
@@ -21,11 +21,11 @@
 + Copy the code provided in the image and write it at the visual studio then pass array to the method and run the code (Ctrl+F5).
 #
 ## The code :
-![BinarySearch](./CodeBinary.png)
+![BinarySearch](./Assest/CodeBinary.png)
 
 #
 ## The unit Testing: 
-![Testing BinarySearch](./TestBinary.png)
+![Testing BinarySearch](./Assest/TestBinary.png)
 
 
 
