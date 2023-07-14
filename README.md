@@ -1,12 +1,12 @@
 # data-structures-and-algorithms
 ## Code Challenges in C#
 ## -Table of contents :
-+ [Reverse-Array](./C%23-Array-Reverse/README.md)
-+ [Array-Insert-Shift](./C%23-Array-Insert-Shift/README.md)
-+ [Array-Binary-Search](./C%23-Array-Binary-Search/README.md)
-+ [LinkedList](./LinkedList/README.md)
-+ [LinkedList Insertion](./Linkedlist2/README.md)
-+ [LinkedList KthFromEnd](./LinkedList3-kth/README.md)
-+ [LinkedList ZipLists](./C%23-LinkedList-ZipLists/README.md)
++ [Reverse-Array](./Challenges/C%23-Array-Reverse/README.md)
++ [Array-Insert-Shift](./Challenges/C%23-Array-Insert-Shift/README.md)
++ [Array-Binary-Search](./Challenges/C%23-Array-Binary-Search/README.md)
++ [LinkedList](./Challenges/LinkedList/README.md)
++ [LinkedList Insertion](./Challenges/Linkedlist2/README.md)
++ [LinkedList KthFromEnd](./Challenges/LinkedList3-kth/README.md)
++ [LinkedList ZipLists](./Challenges/C%23-LinkedList-ZipLists/README.md)
 
 

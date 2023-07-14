@@ -3,7 +3,7 @@
 + I created a simple singly Linked list and it's contain some features like the ability of insert a new node to the list, Search for a value to know if it included in the list or not and a it contains a method (toString()) that returns the values in the linked list
 
 ## Whiteboard Process
-![WhiteBoard](./WhiteBoard1.jpg)
+![WhiteBoard](./Assest/WhiteBoard1.jpg)
 ## Approach & Efficiency
 + First I created a class **Node** Which Initialize a value and the nextNode in the list 
 + Then the class **Linkedlist** which contains head that has the value null to ensure each time you create a linked list it's created an empty one.This class contains also a lot of methods  
@@ -14,12 +14,12 @@
 
 ## Solution
 ## The code 
-![Code](./Code.png)
+![Code](./Assest/Code.png)
 ## 
 [Link to the code](./Program.cs)
 
 ## Testing
-![Testing](./Testing.png)
+![Testing](./Assest/Testing.png)
 #
 [Link to the testing](../testLinkedList/UnitTest1.cs)
 
