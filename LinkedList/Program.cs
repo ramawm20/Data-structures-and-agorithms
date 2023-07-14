@@ -1,7 +1,120 @@
-﻿namespace LinkedList
+﻿using System.Reflection.Metadata;
+
+namespace LinkedList
 {
     public class Program
     {
+        public class NodeS<T>
+        {
+            public T Value { get; set; }
+            public NodeS<T> next { get; set; }
+
+            public NodeS(T value)
+            {
+                this.Value = value;
+                this.next = null;
+                
+            }
+        }
+        public class Queue<T>
+        {
+            //First node of the Queue
+            private NodeS<T> front;
+            //last node the Queue
+            private NodeS<T> rear;
+
+
+            public Queue()
+            {
+                this.front = null;
+                this.rear = null;
+
+            }
+            public void enQueue(T value)
+            {
+                NodeS<T> newNode = new NodeS<T>(value);
+
+                if (isEmpty())
+                {
+                    front = newNode;
+                    rear = newNode;
+                }
+                rear.next = newNode;
+                rear = newNode;
+
+            }
+            public T Peek()
+            {
+                if (isEmpty())
+                {
+                    throw new Exception("The queue is empty");
+
+                }
+                return front.Value;
+            }
+            public T deQueue()
+            {
+                if (isEmpty())
+                {
+                    throw new Exception("The queue is empty");
+                }
+                T deleted= front.Value;
+                front = front.next;
+                if (front == null)
+                {
+                    rear = null;
+                }
+
+                return deleted;
+
+            }
+            public bool isEmpty()
+            {
+                return front == null && rear == null;
+            }
+
+        }
+        public class Stack<T> :LinkedList
+        {
+            private NodeS<T> top;
+
+            public Stack()
+            {
+                this.top = null;
+            }
+
+            public void Push(T value)
+            {
+                NodeS<T> newNode =new NodeS<T> (value);
+                newNode.next = top;
+                top = newNode;
+            }
+            public T Pop()
+            {
+                if (isEmpty())
+                {
+                    throw new Exception("The stack is empty");
+                }
+
+                T value = top.Value;
+                top = top.next;
+                return value;
+            }
+            public T peek()
+            {
+                if (isEmpty())
+                {
+                    throw new Exception("The stack is empty");
+                }
+                T value = top.Value;
+                return value;
+            }
+            public bool isEmpty()
+            {
+                return top == null;
+            }
+        }
+
         public class Node
         {
             public int value { get; set; }
@@ -255,33 +368,23 @@
 
             static void Main(string[] args)
             {
-                LinkedList newList = new LinkedList();
-                newList.Insert(1);
-                newList.append(2);
-                newList.append(3);
-                newList.append(4);
-                newList.append(5);
-
                
+                Stack<int> stack = new Stack<int>();
+                stack.Push(2);
+                stack.Push(4);
+                stack.Push(0);
+                stack.Push(6);
+                
 
-                LinkedList newl= new LinkedList();
-                LinkedList l1= new LinkedList();
-                LinkedList l2= new LinkedList();
-
-
-                newl = newl.zipLists(l1, l2);
-                string resultOfZip;
-                resultOfZip=newl.toString();
-                Console.WriteLine(resultOfZip);
-
-
-                string res;
-                res = newList.toString();
-                Console.WriteLine(res);
-
-
-
-
+                Console.WriteLine(stack.isEmpty());
+                
+               
+                Queue<string> queue = new Queue<string>();
+                
+                Console.WriteLine(queue.isEmpty());
+                Console.WriteLine(queue.deQueue());
+         
+                
 
             }
         }

@@ -1,6 +1,7 @@
 using LinkedList;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using Xunit.Sdk;
 
 namespace testLinkedList
@@ -353,7 +354,87 @@ namespace testLinkedList
             //Assert
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public void CanPushOntoStack()
+        {
+            Program.Stack<int> newStack = new Program.Stack<int>();  
 
+            newStack.Push(1);
+
+            Assert.Equal(1, newStack.peek());
+        }
+        [Fact]
+        public void CanPushMultipleValuesOntoStack()
+        {
+            Program.Stack<int> newStack = new Program.Stack<int>();
+
+            newStack.Push(1);
+            newStack.Push(2);
+            newStack.Push(3);
+
+            Assert.Equal(3, newStack.peek());
+            Assert.False(newStack.isEmpty());
+                
+        }
+        [Fact]
+        public void CanPopOfstack()
+        {
+            Program.Stack<int> newStack = new Program.Stack<int>();
+
+            newStack.Push(1);
+            newStack.Push(2);
+            newStack.Push(3);
+
+            Assert.Equal(3, newStack.Pop());
+            Assert.Equal(2, newStack.Pop());
+            Assert.Equal(1, newStack.Pop());
+            //Empty stack after multiple pops
+            Assert.True(newStack.isEmpty());
+
+        }
+        [Fact]
+        public void CallingPopOrPeekOnEmptyStack()
+        {
+            Program.Stack<int> newStack = new Program.Stack<int>();
+
+            Assert.True(newStack.isEmpty());
+            Assert.Throws<Exception>(() => newStack.Pop());
+        }
+        [Fact]
+        public void CanEnQueueIntoQueue()
+        {
+            Program.Queue<string> queue = new Program.Queue<string>();
+
+            queue.enQueue("Hello");
+            queue.enQueue("From");
+            queue.enQueue("CC 10");
+
+            Assert.False(queue.isEmpty());
+            Assert.Equal("Hello", queue.Peek());
+        }
+        [Fact]
+        public void CanDeQueueFromQueue()
+        {
+            Program.Queue<string> queue = new Program.Queue<string>();
+
+            queue.enQueue("Hello");
+            queue.enQueue("From");
+            queue.enQueue("CC 10");
+
+            Assert.Equal("Hello", queue.deQueue());
+            Assert.Equal("From", queue.deQueue());
+            Assert.Equal("CC 10", queue.deQueue());
+            Assert.True(queue.isEmpty());
+
+
+        }
+        [Fact]
+        public void CanDeQueueOrPeekOnEmpty()
+        {
+            Program.Queue<string> queue = new Program.Queue<string>();
+
+            Assert.Throws<Exception>(() => queue.deQueue());
+        }
 
 
     }
