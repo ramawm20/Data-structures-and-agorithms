@@ -4,7 +4,7 @@
 
 
 ## Whiteboard Process
-![WhiteBoard](./LinkedList3.jpg)
+![WhiteBoard](./Assest/LinkedList3.jpg)
 
 ## Approach & Efficiency
 + First create a method named KthFromEnd that takes int K.
@@ -19,15 +19,15 @@
 #
 ## Solution
 ## The code 
-![Code1](./CodeLL3.png)
+![Code1](./Assest/CodeLL3.png)
 
 
 ## 
-[Link to the code](../LinkedList/Program.cs)
+[Link to the code](/LinkedList/Program.cs)
 
 ## Testing
-![Testing](./TestingLL3.png)
+![Testing](./Assest/TestingLL3.png)
 
 #
-[Link to the testing](../testLinkedList/UnitTest1.cs)
+[Link to the testing](/testLinkedList/UnitTest1.cs)
 
