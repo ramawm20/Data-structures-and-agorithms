@@ -22,7 +22,7 @@
 ## The code 
 ![Code](./Assest/Code.png)
 ## 
-[Link to the code](.../LinkedList/Program.cs)
+[Link to the code](/LinkedList/Program.cs)
 
 ## Testing
 ![Testing](./Assest/Testing1.png)
@@ -30,5 +30,5 @@
 ![Testing](./Assest/Testing2.png)
 
 #
-[Link to the testing](.../testLinkedList/UnitTest1.cs)
+[Link to the testing](/testLinkedList/UnitTest1.cs)
 
