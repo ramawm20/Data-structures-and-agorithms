@@ -23,7 +23,7 @@
 + Copy the code provided in the image and write it at the visual studio then pass array to the method and run the code (Ctrl+F5).
 #
 ## The code :
-![Reverse Array](./code2.png)
+![Reverse Array](./Assest/code2.png)
 
 
 
