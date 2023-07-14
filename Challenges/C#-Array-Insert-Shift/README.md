@@ -3,7 +3,7 @@
 
 #
 ## -Whiteboard Process
-![Insert-Shift](./Insert-shift-Whiteboard.jpg)
+![Insert-Shift](./Assest/Insert-shift-Whiteboard.jpg)
 
 #
 ## -Approach & Efficiency
