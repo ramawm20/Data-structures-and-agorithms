@@ -3,7 +3,7 @@
 
 #
 ## -Whiteboard Process
-![Reverse-Array](./ReverseArray-Whiteboard.jpg)
+![Reverse-Array](./Assest/ReverseArray-Whiteboard.jpg)
 
 #
 ## -Approach & Efficiency
@@ -21,9 +21,9 @@
 + Copy the code provided in the image and write it at the visual studio then pass array to the method and run the code (Ctrl+F5).
 #
 ## The code :
-![Reverse Array](./code.png)
+![Reverse Array](./Assest/code.png)
 
 ## Unit Testing :
 + Here is a photo of unit testing to this code :      
-![Unit Testing](./testingReverse.png)
+![Unit Testing](./Assest/testingReverse.png)
 
