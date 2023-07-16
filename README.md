@@ -9,6 +9,8 @@
 + [LinkedList KthFromEnd](./Challenges/LinkedList3-kth/README.md)
 + [LinkedList ZipLists](./Challenges/C%23-LinkedList-ZipLists/README.md)
 + [Stack and Queue](./Challenges/C%23-Stack-and-Queue/README.md)
++ [Pseudo Queue](./Challenges/C%23-Pseudo-Queue/README.md)
+
   
 
 
