@@ -4,6 +4,41 @@ namespace LinkedList
 {
     public class Program
     {
+        public class pseudoQueue<T>
+        {
+            private Stack<T> stack1;
+            private Stack<T> stack2;
+
+            public pseudoQueue()
+            {
+                stack1 = new Stack<T>();
+                stack2 = new Stack<T>();
+            }
+            public void Enqueue(T value)
+            {
+                while (stack1.count > 0)
+                {
+                    stack2.Push(stack1.Pop());
+                }
+
+                stack1.Push(value);
+
+                while (stack2.count > 0)
+                {
+                    stack1.Push(stack2.Pop());
+                }
+                
+            }
+            public T Dequeue()
+            {
+                if (stack1.count == 0)
+                {
+                    throw new Exception("The queue is empty.");
+                }
+
+                return stack1.Pop();
+            }
+        }
         public class NodeS<T>
         {
             public T Value { get; set; }
@@ -16,6 +51,7 @@ namespace LinkedList
                 
             }
         }
+        
         public class Queue<T>
         {
             //First node of the Queue
@@ -77,6 +113,7 @@ namespace LinkedList
         public class Stack<T> :LinkedList
         {
             private NodeS<T> top;
+            public int count;
 
             public Stack()
             {
@@ -88,6 +125,7 @@ namespace LinkedList
                 NodeS<T> newNode =new NodeS<T> (value);
                 newNode.next = top;
                 top = newNode;
+                count++;
             }
             public T Pop()
             {
@@ -98,6 +136,7 @@ namespace LinkedList
 
                 T value = top.Value;
                 top = top.next;
+                count--;
                 return value;
             }
             public T peek()
@@ -369,23 +408,16 @@ namespace LinkedList
             static void Main(string[] args)
             {
                
+                pseudoQueue<int > pq= new pseudoQueue<int>() ;
+
+                pq.Enqueue(0) ;
+                pq.Enqueue(1) ;
+                pq.Enqueue(2) ;
+
                 Stack<int> stack = new Stack<int>();
-                stack.Push(2);
-                stack.Push(4);
-                stack.Push(0);
-                stack.Push(6);
-                
-
-                Console.WriteLine(stack.isEmpty());
-                
                
-                Queue<string> queue = new Queue<string>();
-                
-                Console.WriteLine(queue.isEmpty());
-                Console.WriteLine(queue.deQueue());
-         
-                
 
+                Console.WriteLine(stack.count);
             }
         }
     }
