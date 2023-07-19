@@ -10,6 +10,8 @@
 + [LinkedList ZipLists](./Challenges/C%23-LinkedList-ZipLists/README.md)
 + [Stack and Queue](./Challenges/C%23-Stack-and-Queue/README.md)
 + [Pseudo Queue](./Challenges/C%23-Pseudo-Queue/README.md)
++ [Animal Shelter](./Challenges/stack-queue-animal-shelter/README.md)
+
 
   
 
