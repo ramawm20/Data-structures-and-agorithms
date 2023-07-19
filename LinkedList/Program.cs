@@ -4,6 +4,61 @@ namespace LinkedList
 {
     public class Program
     {
+        public class Animal
+        {
+            public string Name { get; set; }
+            public string Species { get; set; }
+
+            public Animal(string Name,string Species)
+            {
+                this.Name = Name;
+                this.Species = Species;
+            }
+        }
+        public class AnimalShelter
+        {
+
+
+            private Queue<Animal> Dogs;
+            private Queue<Animal> Cats;
+
+            public AnimalShelter()
+            {
+                Dogs = new Queue<Animal>();
+                Cats = new Queue<Animal>();
+
+            }
+            public void Enqueue(Animal animal)
+            {
+                if (animal.Species == "dog")
+                {
+                    Dogs.enQueue(animal);
+                }
+                else if (animal.Species == "cat")
+                {
+                    Cats.enQueue(animal);
+                }
+                else
+                {
+                    throw new Exception("Invalid species, You must just enter Dogs or Cats");
+                }
+            }
+            public Animal Dequeu(string pref)
+            {
+                if (pref == "dog")
+                {
+                    return Dogs.deQueue();
+                }
+                else if (pref == "cat")
+                {
+                    
+                    return Cats.deQueue();
+                }
+                return null;
+            }
+        }
+
+
         public class pseudoQueue<T>
         {
             private Stack<T> stack1;
@@ -407,17 +462,25 @@ namespace LinkedList
 
             static void Main(string[] args)
             {
-               
-                pseudoQueue<int > pq= new pseudoQueue<int>() ;
 
-                pq.Enqueue(0) ;
-                pq.Enqueue(1) ;
-                pq.Enqueue(2) ;
+                AnimalShelter animalShelter = new AnimalShelter();
 
-                Stack<int> stack = new Stack<int>();
-               
+                Animal animal1= new Animal("Lolo","cat");
+                Animal animal2 = new Animal("Belly", "dog");
+                Animal animal3 = new Animal("Rocky", "dog");
 
-                Console.WriteLine(stack.count);
+                animalShelter.Enqueue(animal1);
+                animalShelter.Enqueue(animal2);
+                animalShelter.Enqueue(animal3);
+
+                Animal deleted = animalShelter.Dequeu("cat");
+                Animal deleted2 = animalShelter.Dequeu("dog");
+                Animal deleted3 = animalShelter.Dequeu("dog");
+
+
+                Console.WriteLine(deleted.Name);
+                Console.WriteLine(deleted3.Name);
+
             }
         }
     }
