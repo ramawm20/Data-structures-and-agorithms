@@ -19,8 +19,8 @@ namespace LinkedList
         {
 
 
-            private Queue<Animal> Dogs;
-            private Queue<Animal> Cats;
+            public Queue<Animal> Dogs;
+            public Queue<Animal> Cats;
 
             public AnimalShelter()
             {
@@ -114,11 +114,14 @@ namespace LinkedList
             //last node the Queue
             private NodeS<T> rear;
 
+            public int count;
+
 
             public Queue()
             {
                 this.front = null;
                 this.rear = null;
+                this.count = 0;
 
             }
             public void enQueue(T value)
@@ -132,6 +135,8 @@ namespace LinkedList
                 }
                 rear.next = newNode;
                 rear = newNode;
+                count++;
+
 
             }
             public T Peek()
@@ -155,7 +160,7 @@ namespace LinkedList
                 {
                     rear = null;
                 }
-
+                count--;
                 return deleted;
 
             }
@@ -465,21 +470,14 @@ namespace LinkedList
 
                 AnimalShelter animalShelter = new AnimalShelter();
 
-                Animal animal1= new Animal("Lolo","cat");
+                Animal animal1= new Animal("Lolo","caty");
                 Animal animal2 = new Animal("Belly", "dog");
                 Animal animal3 = new Animal("Rocky", "dog");
 
                 animalShelter.Enqueue(animal1);
-                animalShelter.Enqueue(animal2);
-                animalShelter.Enqueue(animal3);
-
-                Animal deleted = animalShelter.Dequeu("cat");
-                Animal deleted2 = animalShelter.Dequeu("dog");
-                Animal deleted3 = animalShelter.Dequeu("dog");
-
-
-                Console.WriteLine(deleted.Name);
-                Console.WriteLine(deleted3.Name);
+           
+         
+                
 
             }
         }

@@ -435,7 +435,67 @@ namespace testLinkedList
 
             Assert.Throws<Exception>(() => queue.deQueue());
         }
-        
+        [Fact]
+        public void TestAnimalShelterHappyPath()
+        {
+            //Arrange
+            Program.AnimalShelter animalShelter = new Program.AnimalShelter();
+            Program.Animal animal1 = new Program.Animal("Lolo","cat");
+            Program.Animal animal2 = new Program.Animal("Rockey", "dog");
+
+            //Act
+            animalShelter.Enqueue(animal1);
+            animalShelter.Enqueue(animal2);
+
+            //Assert
+            Assert.Equal(1,animalShelter.Dogs.count);
+            Assert.Equal(1, animalShelter.Cats.count);
+            Assert.Equal("Lolo", animal1.Name);
+            Assert.Equal("Rockey", animal2.Name);
+
+        }
+        [Fact]
+        public void TestAnimalShelterInvalidSpecies()
+        {
+            Program.AnimalShelter animalShelter = new Program.AnimalShelter();
+            Program.Animal animal1 = new Program.Animal("Lolo", "bird");
+
+            Assert.Throws<Exception>(() => animalShelter.Enqueue(animal1));
+
+        }
+        [Fact]
+        public void TestAnimalShelterDequeueAnimals()
+        {
+            //Arrange
+            Program.AnimalShelter animalShelter = new Program.AnimalShelter();
+
+            //Act
+            Program.Animal animal1 = new Program.Animal("Lolo", "cat");
+            Program.Animal animal2 = new Program.Animal("Rokey", "dog");
+
+            animalShelter.Enqueue(animal1);
+            animalShelter.Enqueue(animal2);
+
+            Program.Animal DeAnimal1 = animalShelter.Dequeu("cat");
+            Program.Animal DeAnimal2 = animalShelter.Dequeu("dog");
+
+            //Assert
+            Assert.Equal("Lolo",DeAnimal1.Name );
+            Assert.Equal("Rokey", DeAnimal2.Name);
+
+        }
+        [Fact]
+        public void TestAnimalShelterDequeueInvalidSpecies()
+        {
+            //Arrange
+            Program.AnimalShelter animalShelter = new Program.AnimalShelter();
+
+            //Act
+            Program.Animal ActualAnimal =animalShelter.Dequeu("bird");
+
+            //Assert
+            Assert.Equal(null,ActualAnimal);
+        }
 
 
     }
