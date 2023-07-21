@@ -1,9 +1,33 @@
 ﻿using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LinkedList
 {
     public class Program
     {
+        public static bool ValidateBrackets(string str)
+        {
+
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char c in str)
+            {
+                if (c == '[' || c == '(' || c == '{')
+                {
+                    stack.Push(c);
+                }
+                else if (c == ']' || c == ')' || c == '}')
+                {
+                    char node = stack.Pop();
+                    if (node == c)
+                    {
+                        stack.Pop();
+                    }
+
+                }
+            }
+            return stack.count == 0;
+        }
         public class Animal
         {
             public string Name { get; set; }
@@ -172,6 +196,7 @@ namespace LinkedList
         }
         public class Stack<T> :LinkedList
         {
+          
             private NodeS<T> top;
             public int count;
 
@@ -468,18 +493,12 @@ namespace LinkedList
             static void Main(string[] args)
             {
 
-                AnimalShelter animalShelter = new AnimalShelter();
+                string str = "   ";
+                Console.WriteLine(ValidateBrackets(str));
 
-                Animal animal1= new Animal("Lolo","caty");
-                Animal animal2 = new Animal("Belly", "dog");
-                Animal animal3 = new Animal("Rocky", "dog");
-
-                animalShelter.Enqueue(animal1);
-           
-         
                 
-
             }
+           
         }
     }
 }
