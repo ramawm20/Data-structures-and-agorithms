@@ -71,6 +71,25 @@ namespace LinkedList
             }
 
         }
+        public T FindMaxValue()
+        {
+            if (Root == null)
+            {
+                throw new Exception("The tree is empty.");
+            }
+
+            return FindMaxValueCode(Root);
+        }
+
+        private T FindMaxValueCode(NodeTrees<T> node)
+        {
+            if (node.rightNode == null)
+            {
+                return node.value;
+            }
+
+            return FindMaxValueCode(node.rightNode);
+        }
 
 
 

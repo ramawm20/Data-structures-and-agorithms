@@ -615,6 +615,37 @@ namespace testLinkedList
             //Assert
             Assert.False(bst.Contains(20));
         }
+        [Fact]
+        public void FindMaxValueEmptyTree()
+        {
+            // Arrange
+            BinaryTree<int> binaryTree = new BinaryTree<int>();
+
+            // Act & Assert
+            Assert.Throws<Exception>(() => binaryTree.FindMaxValue());
+        }
+        [Fact]
+        public void FindMaxValueSuccess()
+        {
+            // Arrange
+            BinaryTree<int> binaryTree = new BinaryTree<int>();
+            binaryTree.Root = new NodeTrees<int>(10);
+            binaryTree.Root.leftNode = new NodeTrees<int>(5);
+            binaryTree.Root.rightNode = new NodeTrees<int>(15);
+           
+
+            // Act
+            int maxValue = binaryTree.FindMaxValue();
+
+            // Assert
+            Assert.Equal(15, maxValue);
+        }
+    
+   
+
+
+
+
 
     }
 }
