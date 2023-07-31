@@ -27,30 +27,34 @@ namespace LinkedList
 
             return node;
         }
-        public bool Contains(int value)
+        public bool Contains(T value)
         {
             return ContainsNode(Root, value);
         }
 
-        private bool ContainsNode(NodeTrees<T> node, int value)
+        private bool ContainsNode(NodeTrees<T> node, T value)
         {
-            if (node == null)
-            {
-                return false;
-            }
+         
+                if (node == null)
+                {
+                    return false;
+                }
 
-            if (node.value == value)
-            {
-                return true;
-            }
-            else if (value < node.value)
-            {
-                return ContainsNode(node.leftNode, value);
-            }
-            else
-            {
-                return ContainsNode(node.rightNode, value);
+                int compareResult = value.CompareTo(node.value);
+
+                if (compareResult == 0)
+                {
+                    return true;
+                }
+                else if (compareResult < 0)
+                {
+                    return ContainsNode(node.leftNode, value);
+                }
+                else
+                {
+                    return ContainsNode(node.rightNode, value);
+                }
             }
         }
     }
-}
+

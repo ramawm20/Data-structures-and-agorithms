@@ -11,24 +11,69 @@ namespace LinkedList
     {
         public NodeTrees<T> Root;
 
-        public List<int> PreOrder()
+       
+
+        public BinaryTree()
         {
-            List<int> result = new List<int>();
-            PreOrderHelper(Root, result);
-            return result;
+            Root = null;
         }
 
-        private void PreOrderHelper(NodeTrees<T> node, List<int> result)
+       
+        public List<T> preOrder()
+        {
+            List<T> result = new List<T>();
+            preOrderTraversal(Root, result);
+            return result;
+        }
+        public void preOrderTraversal(NodeTrees<T> node, List<T> result)
+        {
+            if (node != null) 
+            {
+                result.Add(node.value);
+                preOrderTraversal(node.leftNode, result);
+                preOrderTraversal(node.rightNode, result);
+            }
+           
+
+
+        }
+        public List<T> inOrder()
+        {
+            List<T> result = new List<T>();
+            inOrderTraversal(Root, result);
+            return result;
+        }
+        public void inOrderTraversal(NodeTrees<T> node, List<T> result)
         {
             if (node != null)
             {
+                inOrderTraversal(node.leftNode, result);
                 result.Add(node.value);
-                PreOrderHelper(node.leftNode, result);
-                PreOrderHelper(node.rightNode, result);
+                inOrderTraversal(node.rightNode, result);
             }
+
         }
 
-     
+        public List<T> postOrder()
+        {
+            List<T> result = new List<T>();
+            postOrderTraversal(Root, result);
+            return result;
+        }
+        public void postOrderTraversal(NodeTrees<T> node, List<T> result)
+        {
+            if (node != null)
+            {
+                postOrderTraversal(node.leftNode, result);
+                postOrderTraversal(node.rightNode, result);
+                result.Add(node.value);
+
+            }
+
+        }
+
+
+
 
 
 
