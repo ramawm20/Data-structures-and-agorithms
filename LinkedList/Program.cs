@@ -496,14 +496,24 @@ namespace LinkedList
             static void Main(string[] args)
             {
 
-               
+                Console.WriteLine("Hello");
 
-         }
+                BinarySearchTree<int> bt = new BinarySearchTree<int> { };
 
-                
+                bt.Add(3);
+                bt.Add(7);
+                bt.Add(9);
+                bt.Add(34);
+                bt.Add(2);
 
-                
+                Console.WriteLine(bt.FindMaxValue());
+
             }
+
+
+
+
+        }
            
 
         }
