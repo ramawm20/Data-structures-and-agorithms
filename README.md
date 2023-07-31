@@ -12,6 +12,8 @@
 + [Pseudo Queue](./Challenges/C%23-Pseudo-Queue/README.md)
 + [Animal Shelter](./Challenges/stack-queue-animal-shelter/README.md)
 + [Stack & Queue Brackets](./Challenges/Stack-Queue-Brackets/README.md)
++ [Trees](./Challenges/C%23-Trees/README.md)
+
 
   
 
