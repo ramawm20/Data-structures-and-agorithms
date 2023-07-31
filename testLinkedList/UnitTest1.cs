@@ -496,7 +496,122 @@ namespace testLinkedList
             //Assert
             Assert.Equal(null,ActualAnimal);
         }
+        [Fact]
+        public void testBSTInisiateEmptyTree()
+        {
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
 
+            Assert.Null(bst.Root);
+        }
+        [Fact]
+        public void testBSTInisiateTreeWithSingleRoot()
+        {
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            bst.Add(3);
+
+            int result = bst.Root.value;
+            Assert.Equal(3,result);
+        }
+        [Fact]
+        public void CanSuccessfullyAddLeft_RightChild()
+        {
+            // Arrange
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            // Act
+            bst.Add(10);
+            bst.Add(5); 
+            bst.Add(15); 
+
+            // Assert
+            Assert.Equal( 10, bst.Root.value);
+            Assert.Equal(bst.Root.leftNode.value, 5);
+            Assert.Equal(bst.Root.rightNode.value, 15);
+        }
+        [Fact]
+        public void ReturnCollectionFromPreOrder()
+        {
+            //Arrange
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            // Act
+            bst.Add(10);
+            bst.Add(5);
+            bst.Add(15);
+            List<int> excpected=new List<int>() { 10,5,15};
+            List<int> actual = bst.preOrder();
+
+
+            //Assert
+            Assert.Equal(excpected, actual);    
+        }
+        [Fact]
+        public void ReturnCollectionFrominOrder()
+        {
+            //Arrange
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            // Act
+            bst.Add(10);
+            bst.Add(5);
+            bst.Add(15);
+            List<int> excpected = new List<int>() { 5,10,15};
+            List<int> actual = bst.inOrder();
+
+
+            //Assert
+            Assert.Equal(excpected, actual);
+        }
+        [Fact]
+        public void ReturnCollectionFromPostOrder()
+        {
+            //Arrange
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            // Act
+            bst.Add(10);
+            bst.Add(5);
+            bst.Add(15);
+            List<int> excpected = new List<int>() { 5,15,10 };
+            List<int> actual = bst.postOrder();
+
+
+            //Assert
+            Assert.Equal(excpected, actual);
+        }
+        [Fact]
+     
+        public void ReturnTrueFromContains()
+        {
+            //Arrange
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            // Act
+            bst.Add(10);
+            bst.Add(5);
+            bst.Add(15);
+
+
+
+            //Assert
+            Assert.True(bst.Contains(10));
+        }
+        [Fact]
+
+        public void ReturnFalseFromContains()
+        {
+            //Arrange
+            BinarySearchTree<int> bst = new BinarySearchTree<int>();
+
+            // Act
+            bst.Add(10);
+            bst.Add(5);
+            bst.Add(15);
+
+            //Assert
+            Assert.False(bst.Contains(20));
+        }
 
     }
 }

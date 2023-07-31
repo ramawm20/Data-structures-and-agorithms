@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata;
+﻿using System.ComponentModel;
+using System.Reflection.Metadata;
+using static LinkedList.Program;
 
 namespace LinkedList
 {
@@ -468,18 +470,16 @@ namespace LinkedList
             static void Main(string[] args)
             {
 
-                AnimalShelter animalShelter = new AnimalShelter();
+                BinarySearchTree<int> bst = new BinarySearchTree<int>();
 
-                Animal animal1= new Animal("Lolo","caty");
-                Animal animal2 = new Animal("Belly", "dog");
-                Animal animal3 = new Animal("Rocky", "dog");
-
-                animalShelter.Enqueue(animal1);
-           
-         
                 
+                bst.Add(10);
+                bst.Add(5);
+                bst.Add(15);
+                bst.Add(3);
+                bst.Add(7);
 
-            }
+         }
         }
     }
 }
