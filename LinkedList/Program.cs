@@ -496,19 +496,11 @@ namespace LinkedList
             static void Main(string[] args)
             {
 
-                BinarySearchTree<int> bst = new BinarySearchTree<int>();
-
-                
-                bst.Add(10);
-                bst.Add(5);
-                bst.Add(15);
-                bst.Add(3);
-                bst.Add(7);
+               
 
          }
 
-                string str = "   ";
-                Console.WriteLine(ValidateBrackets(str));
+                
 
                 
             }
@@ -516,4 +508,3 @@ namespace LinkedList
 
         }
     }
-}
