@@ -497,6 +497,7 @@ namespace testLinkedList
             Assert.Equal(null,ActualAnimal);
         }
         [Fact]
+
         public void testBSTInisiateEmptyTree()
         {
             BinarySearchTree<int> bst = new BinarySearchTree<int>();
@@ -586,6 +587,43 @@ namespace testLinkedList
         {
             //Arrange
             BinarySearchTree<int> bst = new BinarySearchTree<int>();
+        public void TestValidateBracketsIfBalanced()
+        {
+            //Arrange
+            string str1 = "()[[Extra Characters]]";
+            string str2 = "{}(){}";
+            string str3 = "{}{Code}[Fellows](())";
+            string str4 = " ";
+
+
+            //Act & Assert
+            Assert.True(Program.ValidateBrackets(str1));
+            Assert.True(Program.ValidateBrackets(str2));
+            Assert.True(Program.ValidateBrackets(str3));
+            Assert.True(Program.ValidateBrackets(str4));
+
+
+
+        }
+        [Fact]
+        public void TestValidateBracketsIfNotBalanced()
+        {
+            //Arrange
+            string str1 = "[({}]";
+            string str2 = "(((";
+            string str3 = "(hh](";
+            string str4 = "[";
+
+
+
+            //Act & Assert
+            Assert.False(Program.ValidateBrackets(str1));
+            Assert.False(Program.ValidateBrackets(str2));
+            Assert.False(Program.ValidateBrackets(str3));
+            Assert.False(Program.ValidateBrackets(str4));
+
+        }
+
 
             // Act
             bst.Add(10);

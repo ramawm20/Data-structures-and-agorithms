@@ -1,11 +1,36 @@
+
 ﻿using System.ComponentModel;
 using System.Reflection.Metadata;
 using static LinkedList.Program;
+
 
 namespace LinkedList
 {
     public class Program
     {
+        public static bool ValidateBrackets(string str)
+        {
+
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char c in str)
+            {
+                if (c == '[' || c == '(' || c == '{')
+                {
+                    stack.Push(c);
+                }
+                else if (c == ']' || c == ')' || c == '}')
+                {
+                    char node = stack.Pop();
+                    if (node == c)
+                    {
+                        stack.Pop();
+                    }
+
+                }
+            }
+            return stack.count == 0;
+        }
         public class Animal
         {
             public string Name { get; set; }
@@ -174,6 +199,7 @@ namespace LinkedList
         }
         public class Stack<T> :LinkedList
         {
+          
             private NodeS<T> top;
             public int count;
 
@@ -480,6 +506,14 @@ namespace LinkedList
                 bst.Add(7);
 
          }
+
+                string str = "   ";
+                Console.WriteLine(ValidateBrackets(str));
+
+                
+            }
+           
+
         }
     }
 }
