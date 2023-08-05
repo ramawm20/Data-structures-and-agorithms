@@ -8,6 +8,7 @@ namespace LinkedList
 {
     public class Program
     {
+
         public static bool ValidateBrackets(string str)
         {
 
@@ -508,12 +509,21 @@ namespace LinkedList
 
                 Console.WriteLine(bt.FindMaxValue());
 
+                BinarySearchTree<int> bst = new BinarySearchTree<int>();
+                bst.Add(10);
+                bst.Add(5);
+                bst.Add(15);
+                bst.Add(7);
+                bst.Add(12);
+
+                List<int> breadthFirstResult = bst.BreadthFirst();
+                Console.WriteLine(string.Join(", ", breadthFirstResult));
+
             }
 
-
-
-
-        }
+           
+        
+}
            
 
         }
