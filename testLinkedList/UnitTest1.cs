@@ -640,9 +640,38 @@ namespace testLinkedList
             // Assert
             Assert.Equal(15, maxValue);
         }
-    
-   
 
+
+        [Fact]
+        public void TestBreadthFirstMethodTreeWithOneNode()
+        {
+            // Arrange
+            BinaryTree<int> tree = new BinaryTree<int>();
+            tree.Root = new NodeTrees<int>(10);
+
+            // Act
+            List<int> result = tree.BreadthFirst();
+
+            // Assert
+            Assert.Equal(new List<int> { 10 }, result);
+        }
+        [Fact]
+        public void TestBreadthFirstTreeWithMultiNodes()
+        {
+            // Arrange
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(10);
+            tree.Add(5);
+            tree.Add(15);
+            tree.Add(7);
+            tree.Add(12);
+
+            // Act
+            List<int> result = tree.BreadthFirst();
+
+            // Assert
+            Assert.Equal(new List<int> { 10, 5, 15, 7, 12 }, result);
+        }
 
 
 
