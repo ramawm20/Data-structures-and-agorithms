@@ -15,6 +15,7 @@
 + [Trees](./Challenges/C%23-Trees/README.md)
 + [Tree Max](./Challenges/C%23-TreeMax/README.md)
 + [Tree Breadth First](./Challenges/C%23-Tree-Breadth-First/README.md)
++ [Tree Fizz Buzz](./Challenges/C%23-tree-fizz-buzz/README.md)
   
 
 
