@@ -674,7 +674,23 @@ namespace testLinkedList
         }
 
 
+        [Fact]
+        public void TestFizzBuzzTreeTransform()
+        {
+            
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+            tree.Add(15); 
+            tree.Add(9);  
+            tree.Add(25); 
+            tree.Add(7); 
 
+           
+            BinarySearchTree<string> newTree = tree.FizzBuzzTreeTransform();
+
+            
+            var preOrderRes = newTree.preOrder();
+            Assert.Equal(new List<string> { "FizzBuzz", "Fizz", "7", "Buzz" }, preOrderRes);
+        }
 
     }
 }

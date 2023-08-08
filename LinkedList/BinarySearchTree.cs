@@ -55,6 +55,43 @@ namespace LinkedList
                     return ContainsNode(node.rightNode, value);
                 }
             }
+        public BinarySearchTree<string> FizzBuzzTreeTransform()
+        {
+            BinarySearchTree<string> newTree = new BinarySearchTree<string>();
+            newTree.Root = FizzBuzzTreeTransform(Root);
+            return newTree;
+        }
+
+        private NodeTrees<string> FizzBuzzTreeTransform(NodeTrees<T> node)
+        {
+            if (node == null)
+                return null;
+
+            NodeTrees<string> newNode = new NodeTrees<string>(TransformValue(node.value));
+
+            newNode.leftNode = FizzBuzzTreeTransform(node.leftNode);
+            newNode.rightNode = FizzBuzzTreeTransform(node.rightNode);
+
+            return newNode;
+        }
+
+        private string TransformValue(T value)
+        {
+            if (value is int intValue)
+            {
+                if (intValue % 3 == 0 && intValue % 5 == 0)
+                    return "FizzBuzz";
+                if (intValue % 3 == 0)
+                    return "Fizz";
+                if (intValue % 5 == 0)
+                    return "Buzz";
+            }
+
+            return value.ToString();
         }
     }
+
+
+        }
+    
 
