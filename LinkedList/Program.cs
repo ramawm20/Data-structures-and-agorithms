@@ -496,19 +496,22 @@ namespace LinkedList
             static void Main(string[] args)
             {
 
-                Console.WriteLine("Hello");
+				int[] arr1 = { 8, 4, 23, 42, 16, 15 };
+				Console.Write("Original Array: ");
+				for (int i = 0; i < arr1.Length; i++)
+                {
+                    Console.Write(arr1[i]);
+                }
 
-                BinarySearchTree<int> bt = new BinarySearchTree<int> { };
+				MergeSort.MergeSortAlgo(arr1);
 
-                bt.Add(3);
-                bt.Add(7);
-                bt.Add(9);
-                bt.Add(34);
-                bt.Add(2);
+				Console.Write("Sorted Array: ");
+				for (int i = 0; i < arr1.Length; i++)
+				{
+					Console.Write(arr1[i]);
+				}
 
-                Console.WriteLine(bt.FindMaxValue());
-
-            }
+			}
 
 
 

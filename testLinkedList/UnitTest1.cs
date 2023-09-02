@@ -691,6 +691,52 @@ namespace testLinkedList
             var preOrderRes = newTree.preOrder();
             Assert.Equal(new List<string> { "FizzBuzz", "Fizz", "7", "Buzz" }, preOrderRes);
         }
+		[Fact]
+		public void TestMergeSortEmptyArray()
+		{
+			int[] arr = new int[0];
+			MergeSort.MergeSortAlgo(arr);
+			Assert.Empty(arr);
+		}
+		[Fact]
+		public void TestMergeSortSingleElementArray()
+		{
+			int[] arr = { 5 };
+			MergeSort.MergeSortAlgo(arr);
+			Assert.Equal(new int[] { 5 }, arr);
+		}
 
-    }
+		[Fact]
+		public void TestMergeSortSortedArray()
+		{
+			int[] arr = { 1, 2, 3, 4, 5 };
+			MergeSort.MergeSortAlgo(arr);
+			Assert.Equal(new int[] { 1, 2, 3, 4, 5 }, arr);
+		}
+
+		[Fact]
+		public void TestMergeSortReverseSortedArray()
+		{
+			int[] arr = { 5, 4, 3, 2, 1 };
+			MergeSort.MergeSortAlgo(arr);
+			Assert.Equal(new int[] { 1, 2, 3, 4, 5 }, arr);
+		}
+
+		[Fact]
+		public void TestMergeSortUnsortedArray()
+		{
+			int[] arr = { 3, 1, 4, 5, 2 };
+			MergeSort.MergeSortAlgo(arr);
+			Assert.Equal(new int[] { 1, 2, 3, 4, 5 }, arr);
+		}
+
+		[Fact]
+		public void TestMergeSortLargeArray()
+		{
+			int[] arr = { 7, 13, 2, 9, 11, 5, 1, 6, 4, 3, 8, 12, 10 };
+			MergeSort.MergeSortAlgo(arr);
+			Assert.Equal(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 }, arr);
+		}
+
+	}
 }
