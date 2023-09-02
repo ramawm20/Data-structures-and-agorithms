@@ -2,8 +2,10 @@
 ## What Is a Merge Sort Algorithm?
 + Merge sort is one of the most efficient sorting algorithms. It is based on the divide-and-conquer strategy. Merge sort continuously cuts down a list into multiple sublists until each has only one item, then merges those sublists into a sorted list.
 
-## Converting the Pseudo code into C# code =>
+## Converting the Pseudo code into C# code =>   
+
 + This it the Pesudo code of the Merge Sort method .
+  
 ![Merge Sort](./Assest/MergeSortPesudo.png)
 + And this is it's code in C# =>     
 ![Code](./Assest/MergeSortCode.png)
