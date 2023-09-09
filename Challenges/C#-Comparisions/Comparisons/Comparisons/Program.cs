@@ -41,8 +41,9 @@ namespace Comparisons
 				}
 				Console.WriteLine();
 			}
+			Console.WriteLine("-------------------------------------------------------------------------------------");
 			var newList2 = SortByTitle(movieList);
-			Console.WriteLine("Sorted Movie Data by Year:");
+			Console.WriteLine("Sorted Movie Data by Title:");
 			foreach (var movie in newList2)
 			{
 				Console.WriteLine($"Title: {movie.Title}");
@@ -65,22 +66,22 @@ namespace Comparisons
 		}
 		public static List<Movie> SortByTitle(List<Movie> movies)
 		{
-			// Use LINQ to sort the movies by Title, ignoring leading "A", "An", or "The"
+		
 			List<Movie> result = movies
 				.OrderBy(movie =>
 				{
 					string title = movie.Title;
 					if (title.StartsWith("The ", StringComparison.OrdinalIgnoreCase))
 					{
-						title = title.Substring(4); // Remove "The "
+						title = title.Substring(4); 
 					}
 					else if (title.StartsWith("A ", StringComparison.OrdinalIgnoreCase))
 					{
-						title = title.Substring(2); // Remove "A "
+						title = title.Substring(2); 
 					}
 					else if (title.StartsWith("An ", StringComparison.OrdinalIgnoreCase))
 					{
-						title = title.Substring(3); // Remove "An "
+						title = title.Substring(3); 
 					}
 					return title;
 				})
