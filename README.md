@@ -17,6 +17,8 @@
 + [Tree Breadth First](./Challenges/C%23-Tree-Breadth-First/README.md)
 + [Tree Fizz Buzz](./Challenges/C%23-tree-fizz-buzz/README.md)
 + [Merge Sort](./Challenges/C%23-Merge-Sort/README.md)
++ [Sorting Comparisions](./Challenges/C%23-Comparisions/README.md)
+  
 
   
 
