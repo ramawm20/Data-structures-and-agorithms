@@ -18,6 +18,8 @@
 + [Tree Fizz Buzz](./Challenges/C%23-tree-fizz-buzz/README.md)
 + [Merge Sort](./Challenges/C%23-Merge-Sort/README.md)
 + [Sorting Comparisions](./Challenges/C%23-Comparisions/README.md)
++ [Hash Table](./Challenges/C%23-Hash-Table/README.md)
+
   
 
   
