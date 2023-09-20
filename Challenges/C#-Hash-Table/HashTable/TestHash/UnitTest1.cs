@@ -1,4 +1,5 @@
 using HashTable;
+using static HashTable.TreeIntersection;
 
 namespace TestHash
 {
@@ -85,6 +86,74 @@ namespace TestHash
 			// Assert
 			Assert.InRange(hashValue, 0, 15);
 		}
-	}
+        [Fact]
+        public void TestCommonValues()
+        {
+
+            // Arrange
+            TreeNode root1 = new TreeNode(1);
+            root1.Left = new TreeNode(2);
+            root1.Right = new TreeNode(3);
+            root1.Left.Left = new TreeNode(4);
+            root1.Left.Right = new TreeNode(5);
+
+            TreeNode root2 = new TreeNode(3);
+            root2.Left = new TreeNode(5);
+            root2.Right = new TreeNode(7);
+            root2.Left.Left = new TreeNode(1);
+            root2.Left.Right = new TreeNode(4);
+
+            // Act
+            var commonValues = TreeIntersection.TreeIntersectionValues(root1, root2);
+
+            // Assert
+            Assert.Contains(1, commonValues);
+            Assert.Contains(3, commonValues);
+            Assert.Contains(4, commonValues);
+            Assert.Contains(5, commonValues);
+        }
+
+        [Fact]
+        public void TestNoCommonValues()
+        {
+            //Arrange
+            TreeNode root1 = new TreeNode(1);
+            TreeNode root2 = new TreeNode(3);
+           
+			//Act
+            var commonValues = TreeIntersection.TreeIntersectionValues(root1, root2);
+
+            // Assert
+            Assert.Empty(commonValues);
+        }
+
+        [Fact]
+        public void TestEmptyTrees()
+        {
+            // Arrange
+            TreeNode root1 = null;
+            TreeNode root2 = null;
+
+            // Act
+            var commonValues = TreeIntersection.TreeIntersectionValues(root1, root2);
+
+            //Assert
+            Assert.Empty(commonValues);
+        }
+
+        [Fact]
+        public void TestOneEmptyTree()
+        {
+            //Arrange
+            TreeNode root1 = new TreeNode(1);
+            TreeNode root2 = null;
+
+			//Act
+            var commonValues = TreeIntersection.TreeIntersectionValues(root1, root2);
+
+			//Assert
+            Assert.Empty(commonValues);
+        }
+    }
 
 }
