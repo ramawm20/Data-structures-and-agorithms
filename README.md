@@ -19,6 +19,8 @@
 + [Merge Sort](./Challenges/C%23-Merge-Sort/README.md)
 + [Sorting Comparisions](./Challenges/C%23-Comparisions/README.md)
 + [Hash Table](./Challenges/C%23-Hash-Table/README.md)
++ [Tree Intersection](./Challenges/C%23-tree-intersection/README.md)
+
 
   
 
