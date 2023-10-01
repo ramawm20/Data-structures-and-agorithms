@@ -20,6 +20,8 @@
 + [Sorting Comparisions](./Challenges/C%23-Comparisions/README.md)
 + [Hash Table](./Challenges/C%23-Hash-Table/README.md)
 + [Tree Intersection](./Challenges/C%23-tree-intersection/README.md)
++ [Graphs](./Challenges/C%23-Graphs/README.md)
+  
 
 
   
