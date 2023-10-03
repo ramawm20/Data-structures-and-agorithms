@@ -77,5 +77,38 @@ namespace Graphs
 			return vertices;
 		}
 
+
+		public List<Vertix<T>> BreadthFirst(Vertix<T> Node)
+		{
+			List<Vertix<T>> visitedNodes = new List<Vertix<T>>();
+			Queue<Vertix<T>> queue = new Queue<Vertix<T>>();
+
+			if (!AdjacencyList.ContainsKey(Node))
+			{
+				throw new Exception("This vertix is not the start node in the graph");
+			}
+
+			queue.Enqueue(Node);
+			visitedNodes.Add(Node);
+
+
+			while (queue.Count > 0)
+			{
+				Vertix<T> currentNode = queue.Dequeue();
+				List<Edge<T>> neighbors = AdjacencyList[currentNode];
+
+				foreach (Edge<T> neighborEdge in neighbors)
+				{
+					Vertix<T> neighborNode = neighborEdge.vertix;
+					if (!visitedNodes.Contains(neighborNode))
+					{
+						visitedNodes.Add(neighborNode);
+						queue.Enqueue(neighborNode);
+					}
+				}
+			}
+
+			return visitedNodes;
+		}
 	}
 }

@@ -113,5 +113,41 @@ namespace TestGraph
             // Assert
             Assert.Equal(2, neighborsOfA[0].vertix.Value);
         }
+
+		[Fact]
+		public void TestBreadthFirstNotExistNode()
+		{
+			// Arrange
+			Graph<int> graph = new Graph<int>();
+			var node1 = new Vertix<int>(1);
+			var node2 = new Vertix<int>(2);
+
+			graph.AddEdge(node1, node2);
+
+			// Act and Assert
+			Assert.Throws<Exception>(() => graph.BreadthFirst(new Vertix<int>(3)));
+		}
+
+		[Fact]
+		public void TestBreadthFirstTraversal()
+		{
+			// Arrange
+			Graph<int> graph = new Graph<int>();
+			var node1 = new Vertix<int>(1);
+			var node2 = new Vertix<int>(2);
+			var node3 = new Vertix<int>(3);
+			var node4 = new Vertix<int>(4);
+
+			graph.AddEdge(node1, node2);
+			graph.AddEdge(node1, node3);
+			graph.AddEdge(node2, node4);
+
+			// Act
+			var result = graph.BreadthFirst(node1);
+
+			// Assert
+			var expectedOrder = new List<Vertix<int>> { node1, node2, node3, node4 };
+			Assert.Equal(expectedOrder, result);
+		}
 	}
 }
