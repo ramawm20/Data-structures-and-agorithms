@@ -110,5 +110,29 @@ namespace Graphs
 
 			return visitedNodes;
 		}
+
+		public List<Vertix<T>> DepthFirst(Vertix<T> startNode)
+		{
+			List<Vertix<T>> visitedNodes = new List<Vertix<T>>();
+			HashSet<Vertix<T>> visitedSet = new HashSet<Vertix<T>>();
+			DepthFirstRecursive(startNode, visitedNodes, visitedSet);
+			return visitedNodes;
+		}
+
+		private void DepthFirstRecursive(Vertix<T> currentNode, List<Vertix<T>> visitedNodes, HashSet<Vertix<T>> visitedSet)
+		{
+			if (currentNode == null || visitedSet.Contains(currentNode))
+			{
+				return;
+			}
+
+			visitedNodes.Add(currentNode);
+			visitedSet.Add(currentNode);
+
+			foreach (Edge<T> neighborEdge in GetNeighbors(currentNode))
+			{
+				DepthFirstRecursive(neighborEdge.vertix, visitedNodes, visitedSet);
+			}
+		}
 	}
 }

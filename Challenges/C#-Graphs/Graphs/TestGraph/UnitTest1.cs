@@ -122,7 +122,7 @@ namespace TestGraph
 			var node1 = new Vertix<int>(1);
 			var node2 = new Vertix<int>(2);
 
-			graph.AddEdge(node1, node2);
+			graph.addUndirectEdge(node1, node2);
 
 			// Act and Assert
 			Assert.Throws<Exception>(() => graph.BreadthFirst(new Vertix<int>(3)));
@@ -138,9 +138,9 @@ namespace TestGraph
 			var node3 = new Vertix<int>(3);
 			var node4 = new Vertix<int>(4);
 
-			graph.AddEdge(node1, node2);
-			graph.AddEdge(node1, node3);
-			graph.AddEdge(node2, node4);
+			graph.addUndirectEdge(node1, node2);
+			graph.addUndirectEdge(node1, node3);
+			graph.addUndirectEdge(node2, node4);
 
 			// Act
 			var result = graph.BreadthFirst(node1);
@@ -149,5 +149,57 @@ namespace TestGraph
 			var expectedOrder = new List<Vertix<int>> { node1, node2, node3, node4 };
 			Assert.Equal(expectedOrder, result);
 		}
-	}
+		[Fact]
+		public void TestDepthFirst()
+		{
+			// Arrange
+			var graph = new Graph<string>();
+			var a = graph.addVertix("A");
+			var b = graph.addVertix("B");
+			var c = graph.addVertix("C");
+			var d = graph.addVertix("D");
+			var e = graph.addVertix("E");
+			var f = graph.addVertix("F");
+
+			graph.addDirectEdge(a, b);
+			graph.addDirectEdge(a, c);
+			graph.addDirectEdge(b, d);
+			graph.addDirectEdge(b, e);
+			graph.addDirectEdge(c, f);
+
+			// Act
+			var result = graph.DepthFirst(a);
+
+			// Assert
+			Assert.Equal(new List<string> { "A", "B", "D", "E", "C", "F" }, result.ConvertAll(v => v.Value));
+		}
+
+		[Fact]
+		public void TestDepthFirstSingleNode()
+		{
+			// Arrange
+			var graph = new Graph<string>();
+			var a = graph.addVertix("A");
+
+			// Act
+			var result = graph.DepthFirst(a);
+
+			// Assert
+			Assert.Equal("A", result[0].Value);
+		}
+
+		[Fact]
+		public void TestDepthFirstEmptyList()
+		{
+			// Arrange
+			var graph = new Graph<string>();
+
+			// Act
+			var result = graph.DepthFirst(null); // Pass null as the starting node
+
+			// Assert
+			Assert.Empty(result);
+		}
+	
+}
 }
