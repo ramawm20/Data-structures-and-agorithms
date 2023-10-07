@@ -23,6 +23,8 @@
 + [Graphs](./Challenges/C%23-Graphs/README.md)
 + [Graphs Breadth First](./Challenges/C%23-graph-breadth-first/README.md)
 + [Graphs Depth First](./Challenges/C%23-graph-depth-first/README.md)
++ [Graphs Buisness Trip Cost](./Challenges/C%23-graph-business-trip/README.md)
+
 
 
   
